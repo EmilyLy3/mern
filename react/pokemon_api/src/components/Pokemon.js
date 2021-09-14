@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 
 
 const Pokemon = () => {
-
     const [allPokemon, setAllPokemon] = useState([]);
 
 
@@ -19,7 +18,7 @@ const Pokemon = () => {
             .catch(error => {
                 console.log(error);
             })
-        console.log(allPokemon);
+        // console.log(allPokemon);
     };
 
 
@@ -35,5 +34,6 @@ const Pokemon = () => {
         </div>
     );
 };
+
 
 export default Pokemon;
