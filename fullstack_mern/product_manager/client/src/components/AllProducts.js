@@ -23,8 +23,10 @@ const AllProducts = () => {
             <h1>All Products:</h1>
             {
                 allTheProducts.map((product, i) => {
-                    return <p key={i}>
-                        <Link to={`/products/${product._id}`}>{product.title}</Link></p>
+                    return <div className="d-flex justify-content-between" key={i}>
+                        <p><Link to={`/products/${product._id}`}>{product.title}</Link></p>
+                        <p><Link to={`/products/edit/${product._id}`}>Edit</Link> | <Link to={`/products/delete/${product._id}`}>Delete</Link></p>
+                    </div>
                 })
             }
         </div>

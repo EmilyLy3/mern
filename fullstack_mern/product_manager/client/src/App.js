@@ -2,12 +2,13 @@ import './App.css';
 import ProductForm from './components/ProductForm';
 import AllProducts from './components/AllProducts';
 import OneProduct from './components/OneProduct';
+import EditProduct from './components/EditProduct';
+import DeleteProduct from './components/DeleteProduct';
 
 import {
   BrowserRouter,
   Switch,
-  Route,
-  Link 
+  Route
 } from "react-router-dom";
 
 
@@ -25,6 +26,12 @@ function App() {
           </Route>
           <Route exact path="/products/:id">
             <OneProduct></OneProduct>
+          </Route>
+          <Route exact path="/products/edit/:id">
+            <EditProduct></EditProduct>
+          </Route>
+          <Route exact path="/products/delete/:id">
+            <DeleteProduct></DeleteProduct>
           </Route>
         </Switch>
 
