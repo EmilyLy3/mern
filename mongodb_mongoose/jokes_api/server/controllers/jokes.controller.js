@@ -53,11 +53,11 @@ module.exports.updateJoke = (req, res) => {
 }
 
 
-module.exports.deleteQuote = (req, res) => {
+module.exports.deleteJoke = (req, res) => {
     console.log("Deleting joke with the id --> ", req.params.id)
     Joke.deleteOne({_id: req.params.id})
-        .then(deletedQuote => {
-            res.json({results: deletedQuote})
+        .then(deletedJoke => {
+            res.json({results: deletedJoke})
         })
         .catch(err => {
             res.json({err: err})
