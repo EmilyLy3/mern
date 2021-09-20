@@ -1,0 +1,23 @@
+<@&770052368145711115> the full mern setup guide. I am pinning this to the channel for easy access: ```MERN setup guide
+
+1. Create a folder for your project: beltreviewer
+2. cd beltReviewer
+3. Initialize a javascript package for the project using: npm init -y
+4. Install dependencies: npm install express cors mongoose
+5. Create a server.js file in the project folder
+6. Create a server folder in the project folder
+7. Make 4 directories in the server folder: config, models, controllers, routes
+8. Make a config.js file in the config folder
+9. Set up the config.js file as usual—>make sure you change name of db to something unique that you havent used yet
+10. Set up server.js (remember to require the mongoose config)
+11. CHECKPOINT-Test it using nodemon server.js (running the server) to make sure it says established connection with db
+12. Create a model file in the models folder. Set up model according to wireframe and project requirements. 
+13. Create a controller file in the controllers folder, and set up the controllers to work with your models that you import
+14. Create a routes file in the routes folder and set up routes. Make sure the methods in the controllers are referenced in the routes
+15. In server.js, import (require) the routes and pass the app object to it
+16. CHECKPOINT- test all routes using postman before building the front end
+17. Import cors in backend and have app use cors so react can interact with the backend- do this in the server.js file
+18. Create a react project inside the project folder (sibling to the server.js file, package.json, and server folder) using “npx create-react-app client” command
+19. Install dependencies for our front end - cd into client folder and run “npm install axios react-router-dom”
+20. Open up 2 terminals, one inside the project folder and one in the client folder. Run the backend from the project folder using “nodemon server.js” and run the front end from the client folder using “npm start”
+21. Build out the front end in react. Happy hacking!```
