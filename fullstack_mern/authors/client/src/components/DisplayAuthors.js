@@ -13,10 +13,22 @@ const DisplayAuthors = () => {
         axios.get("http://localhost:8000/api/authors")
             .then(res => {
                 console.log("Response for getting all authors -->", res)
+                res.data.results.sort(function ( a, b ) {
+                    if (a.name < b.name){
+                        return -1;
+                    }
+                    if (a.name > b.name){
+                        return 1;
+                    }
+                    return 0;
+                })
                 setAllAuthors(res.data.results)
             })
             .catch(err => console.log(err))
-    }, [deleteClicked])
+        }, [deleteClicked])
+
+
+    console.log("SORTED AUTHORS -->", allAuthors)
 
 
     const deleteClickHandler = (e, id) => {

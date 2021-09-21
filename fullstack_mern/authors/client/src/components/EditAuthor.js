@@ -16,11 +16,15 @@ const EditAuthor = () => {
 
     useEffect(() => {
             axios.get(`http://localhost:8000/api/authors/${id}`)
-                .then(res=>{
+                .then(res => {
                     console.log("Response for getting one author -->", res)
-                    setAuthorInfo(res.data.results)
+                    if(res.data.err) {
+                        history.push("/author_not_found")
+                    } else {
+                        setAuthorInfo(res.data.results)
+                    }
                 })
-                .catch(err => console.log(err))
+                .catch(err => {console.log(err)})
         }, [])
 
 
@@ -54,7 +58,7 @@ const EditAuthor = () => {
             <form onSubmit={(e)=>submitHandler(e)}>
                 <div className="form-group mb-3">
                     <label htmlFor="name">Name:</label>
-                    <input onChange={(e)=>changeHandler(e)} type="text" name="name" value={authorInfo.name} className="form-control"/>
+                    <input onChange={(e)=>changeHandler(e)} type="text" name="name" value={authorInfo?.name} className="form-control"/>
                     <p className="text-danger">{validationErrors.name?.message}</p>
                 </div>
                 <input type="submit" value="Update" className="btn btn-primary"/>

@@ -2,6 +2,7 @@ import './App.css';
 import DisplayAuthors from './components/DisplayAuthors';
 import CreateAuthor from './components/CreateAuthor';
 import EditAuthor from './components/EditAuthor';
+import NoAuthor from './components/NoAuthor';
 
 import {
   BrowserRouter,
@@ -27,6 +28,10 @@ function App() {
 
           <Route exact path ="/authors/edit/:id">
             <EditAuthor/>
+          </Route>
+
+          <Route exact path ="/author_not_found">
+            <NoAuthor/>
           </Route>
         </Switch>
       </BrowserRouter>
