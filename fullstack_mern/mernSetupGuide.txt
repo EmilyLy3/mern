@@ -40,4 +40,4 @@ MERN Setup Guide
 
 20. Open up 2 terminals, one inside the project folder and one in the client folder. Run the backend from the project folder using “nodemon server.js” and run the front end from the client folder using “npm start”
 
-21. Build out the front end in react. Happy hacking!```
+21. Build out the front end in react. Happy hacking!
